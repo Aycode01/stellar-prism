@@ -62,9 +62,8 @@ jobs:
           cache: true
 
       # v7+ is required: .golangci.yml uses the golangci-lint v2 config schema,
-      # which older versions of the action cannot parse. The linter version is
-      # pinned so a lint release cannot turn CI red without a commit here.
-      - uses: golangci/golangci-lint-action@v6
+      # which older versions of the action cannot parse.
+      - uses: golangci/golangci-lint-action@v9
         with:
           version: latest
 
