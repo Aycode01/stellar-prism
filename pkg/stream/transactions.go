@@ -99,12 +99,12 @@ func transactionRecord(tx protocol.TransactionInfo) Record {
 		Time:     time.Unix(tx.LedgerCloseTime, 0).UTC(),
 		Kind:     KindTransaction,
 		Transaction: &Transaction{
-			Hash:           tx.TransactionHash,
-			Index:          uint32(tx.ApplicationOrder),
-			Successful:     tx.Status == protocol.TransactionStatusSuccess,
-			EnvelopeXDR:    tx.EnvelopeXDR,
-			ResultXDR:      tx.ResultXDR,
-			ResultMetaXDR:  tx.ResultMetaXDR,
+			Hash:          tx.TransactionHash,
+			Index:         uint32(tx.ApplicationOrder),
+			Successful:    tx.Status == protocol.TransactionStatusSuccess,
+			EnvelopeXDR:   tx.EnvelopeXDR,
+			ResultXDR:     tx.ResultXDR,
+			ResultMetaXDR: tx.ResultMetaXDR,
 		},
 	}
 }

@@ -165,10 +165,10 @@ func (n *NDJSON) Emit(r stream.Record) error {
 
 	case stream.KindTransaction:
 		line := transactionLine{
-			Kind:       string(r.Kind),
-			ID:         r.ID,
-			Ledger:     r.Sequence,
-			Time:       formatTime(r.Time),
+			Kind:   string(r.Kind),
+			ID:     r.ID,
+			Ledger: r.Sequence,
+			Time:   formatTime(r.Time),
 		}
 		if r.Transaction != nil {
 			line.Hash = r.Transaction.Hash
